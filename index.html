@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>万万最傻</title>
+	<style>
+		body {
+			margin: 0;
+		}
+
+		#info {
+			position: absolute;
+			top: 10px;
+			width: 100%;
+			text-align: center;
+			z-index: 100;
+			color: rgb(255, 0, 0);
+			display: block;
+			font-size: xx-large;
+		}
+	</style>
+</head>
+
+<body>
+
+	<script src="three.js"></script>
+	<script>
+
+
+		//Scene
+		const scene = new THREE.Scene();
+		const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+		const renderer = new THREE.WebGLRenderer();
+		renderer.setSize(window.innerWidth, window.innerHeight);
+		document.body.appendChild(renderer.domElement);
+
+		//Cube
+		const geometry = new THREE.BoxGeometry();
+		const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+		const cube = new THREE.Mesh(geometry, material);
+		scene.add(cube);
+
+		camera.position.z = 5;
+
+		//Anime
+		function animate() {
+			requestAnimationFrame(animate);
+			cube.rotation.x += 0.01;
+			cube.rotation.y += 0.01;
+			renderer.render(scene, camera);
+		}
+		animate();
+	</script>
+
+	<!-- //Test -->
+	<div id="info">
+		<!-- <a href='http://o0ez0o.xyz/ '>Martin is a PIG. :D<a> -->
+		~万万最傻傻~
+		<p>蓝瘦香菇</p>
+		<p>本来想弄个好牛逼的effect到网页上</p>
+		<p>把网页搞个大新闻再投一波</p>
+		<p>结果没渲染出来~( ＞﹏＜)</p>
+		<p>这个是用来测试渲染的</p>
+		<p>随便做了个网页test一下</p>
+		<p>宝宝最傻啦</p>
+		<p>啾啾啾</p>
+		<p>这个idea我再弄一天如果不行就放弃</p>
+		<p>今天又是没投的一天</p>
+
+	</div>
+
+
+
+</body>
+
+</html>
